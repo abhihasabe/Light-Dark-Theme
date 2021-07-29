@@ -8,7 +8,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  static const String title = 'Light & Dark Theme';
+  static const String title = 'Theme';
 
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Text(
-          'You have pushed the button this many times:',
+          'You have pushed the button this many times',
         ),
       ),
     );
