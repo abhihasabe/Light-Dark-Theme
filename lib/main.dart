@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theme/provider/theme_provider.dart';
+import 'package:theme/screens/dashboard_screen.dart';
+import 'package:theme/screens/splash_screen.dart';
+import 'package:theme/theme/theme.dart';
+import 'package:theme/PlatformService.dart';
 import 'package:theme/widget/change_theme_button_widget.dart';
 
 void main() {
@@ -21,37 +25,16 @@ class MyApp extends StatelessWidget {
         themeMode: themeProvider.themeMode,
         theme: MyThemes.lightTheme,
         darkTheme: MyThemes.darkTheme,
-        home: MyHomePage(title: title,),
+        home: MyHomePage(),
       );
     },
   );
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: [
-          ChangeThemeButtonWidget(),
-        ],
-      ),
-      body: Center(
-        child: Text(
-          'You have pushed the button this many times',
-        ),
-      ),
-    );
+    // TODO: implement build
+    return Dashbaord()/*PlatFormServices.isMobile(context)?Splash():Dashbaord()*/;
   }
 }
