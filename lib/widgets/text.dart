@@ -33,13 +33,8 @@ class TextWidget extends StatelessWidget {
             : smaller == true ? dimens.fontTextSmaller
               : dimens.fontText;
 
-    final Color customColor = primary == true ?
-      colors.primaryColor
-    : 
-      white == true ? 
-        Colors.white 
-      : 
-        accent == true ? colors.accentColor : colors.primaryDarkColor;
+    final Color customColor = primary == true ? colors.primaryColor : white == true ? Colors.white : accent == true
+        ? colors.accentColor : colors.primaryDarkColor;
 
     return Text(
       textValue,
@@ -48,11 +43,7 @@ class TextWidget extends StatelessWidget {
       style: TextStyle(
         decoration: underline == true ? TextDecoration.underline : TextDecoration.none,
         fontSize: fontSize,
-        color: color == null ? 
-            dark == true ? colors.backgroundColor : customColor 
-          : 
-            color,
-        fontWeight: isBold
+        color: color == null ? dark == true ? colors.backgroundColor : customColor : color, fontWeight: isBold
       )
     );
   }

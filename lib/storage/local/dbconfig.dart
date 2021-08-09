@@ -13,7 +13,6 @@ class DbConfig {
         );
       });
     }
-
     return _db;
   }
 

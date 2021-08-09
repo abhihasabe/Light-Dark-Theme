@@ -7,32 +7,64 @@ class MyThemes {
   static ThemeData baseDark = ThemeData.dark();
 
   static final darkTheme = ThemeData(
-    scaffoldBackgroundColor: backgroundDarkColor,
-    cardColor: cardDarkColor,
+    primarySwatch: Colors.red,
     primaryColor: primaryDarkColor,
+    scaffoldBackgroundColor: backgroundDarkColor,
     accentColor: accentDarkColor,
+    indicatorColor: indicatorDarkColor,
+    buttonColor: buttonDarkColor,
+    hintColor: hintDarkColor,
+    highlightColor: highlightDarkColor,
+    hoverColor: hoverColorDarkColor,
+    focusColor: focusColor,
+    disabledColor: disabledColor,
+    cardColor: cardDarkColor,
     errorColor: errorColor,
-    iconTheme: IconThemeData(color: Colors.purple.shade200, opacity: 0.8),
+    //appBarTheme: _appBarTheme("darkTheme"),
+    iconTheme: IconThemeData(color: iconDarkColor, opacity: 0.8),
     textTheme: _customTextTheme(baseDark.textTheme,textDarkColor, "darkTheme"),
     primaryTextTheme: _customTextTheme(baseDark.primaryTextTheme,textDarkColor, "darkTheme"),
     accentTextTheme: _customTextTheme(baseDark.accentTextTheme,textDarkColor, "darkTheme"),
     colorScheme: ColorScheme.dark(),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: iconDarkColor.withOpacity(0.7),
+      unselectedItemColor: iconDarkColor.withOpacity(0.32),
+      selectedIconTheme: IconThemeData(color: primaryDarkColor),
+      showUnselectedLabels: true,
+    ),
   );
 
   static final lightTheme = ThemeData(
-    scaffoldBackgroundColor: backgroundColor,
-    cardColor: cardColor,
+    primarySwatch: Colors.red,
     primaryColor: primaryColor,
+    scaffoldBackgroundColor: backgroundColor,
     accentColor: accentColor,
+    indicatorColor: indicatorColor,
+    buttonColor: buttonColor,
+    hintColor: hintColor,
+    highlightColor: highlightColor,
+    hoverColor: hoverColor,
+    focusColor: focusColorDarkColor,
+    disabledColor: disabledColor,
+    cardColor: cardColor,
     errorColor: errorColor,
-    iconTheme: IconThemeData(color: Colors.red, opacity: 0.8),
-    buttonTheme: ThemeData.light().buttonTheme.copyWith(buttonColor: const Color(0xFFFEDBD0),
-        colorScheme: ThemeData.light().colorScheme.copyWith(secondary: const Color(0xFF442B2D))),
+    //appBarTheme: _appBarTheme("lightTheme"),
+    iconTheme: IconThemeData(color: iconColor, opacity: 0.8),
     primaryIconTheme: ThemeData.light().primaryIconTheme.copyWith(color: const Color(0xFF442B2D)),
     textTheme: _customTextTheme(baseLight.textTheme,textColor, "lightTheme"),
     primaryTextTheme: _customTextTheme(baseLight.primaryTextTheme,textColor, "lightTheme"),
     accentTextTheme: _customTextTheme(baseLight.accentTextTheme,textColor, "lightTheme"),
+    buttonTheme: ThemeData.light().buttonTheme.copyWith(buttonColor: const Color(0xFFFEDBD0),
+        colorScheme: ThemeData.light().colorScheme.copyWith(secondary: const Color(0xFF442B2D))),
     colorScheme: ColorScheme.light(),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: iconColor.withOpacity(0.7),
+      unselectedItemColor: iconColor.withOpacity(0.32),
+      selectedIconTheme: IconThemeData(color: primaryColor),
+      showUnselectedLabels: true,
+    ),
   );
 
   static TextTheme _customTextTheme(TextTheme base, Color color, String theme) {
@@ -52,4 +84,14 @@ class MyThemes {
       overline:  base.overline!.copyWith(fontWeight: FontWeight.w400, fontSize: 10.0, letterSpacing: 1.5, color: theme.contains("darkTheme")?textDarkColor:textColor),
     ).apply(fontFamily: 'Roboto');
   }
+/*
+  static AppBarTheme _appBarTheme(String themeType) {
+    return AppBarTheme(
+      elevation: 0.0,
+      color: themeType.contains("darkTheme")?textDarkColor:textColor,
+      iconTheme: IconThemeData(
+        color: themeType.contains("darkTheme")?iconDarkColor:iconColor,
+      ));
+  }*/
+
 }

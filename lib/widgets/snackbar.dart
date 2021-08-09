@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:theme/theme/colors.dart' as colors;
-import './text.dart';
+import 'text.dart';
 
 class SnackbarWidget {
   SnackbarWidget (GlobalKey<ScaffoldState> scaffoldKey,

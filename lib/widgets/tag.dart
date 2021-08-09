@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:theme/screens/widgets/text.dart';
 import 'package:theme/theme/colors.dart' as colors;
+import 'package:theme/widgets/text.dart';
 
 class TagWidget extends StatefulWidget {
   final String? label;

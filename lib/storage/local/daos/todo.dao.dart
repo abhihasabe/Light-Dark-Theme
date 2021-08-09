@@ -11,16 +11,11 @@ class TodoDAO{
 
   void _getDbInstance() async => _db = (await DbConfig.getInstance())!;
 
-  Future<TodoTable> insert(TodoTable? todo) async {
-    todo!.id = await _db!.insert(TodoTable.tableName, todo.toMap());
-    return todo;
-  }
 
   Future<TodoTable> inserts(TodoTable todo) async {
     todo.id = await _db!.insert(TodoTable.tableName, todo.toMap());
     return todo;
   }
-
 
   Future<List<TodoTable>> getTodos() async {
     List<TodoTable> list = [];

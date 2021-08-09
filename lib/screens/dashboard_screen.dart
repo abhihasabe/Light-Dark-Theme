@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:theme/widget/change_theme_button_widget.dart';
+import 'package:theme/widgets/change_theme_button_widget.dart';
+import 'package:theme/widgets/snackbar.dart';
+import 'package:theme/widgets/toolbar.dart';
 
-class Dashbaord extends StatefulWidget {
+class Dashboard extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _Dashbaord();
+    return _Dashboard();
   }
 }
 
-class _Dashbaord extends State {
+class _Dashboard extends State {
+
+  GlobalKey<ScaffoldState> key = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(actions: [
-        ChangeThemeButtonWidget(),
-      ], title: Text("App Data"),),
+      key: key,
+      appBar: ToolbarWidget(hideBackArrow: true,actions: [ChangeThemeButtonWidget()],
+        logoWidget: false,title: "Flutter Structure"),
       body: Column(
         mainAxisAlignment:  MainAxisAlignment.center,
         children: [
-          Center(child: Text("App Data"))
+          Center(child: Text("App Data", style: Theme.of(context).textTheme.bodyText1)),
         ],
       ),
     );

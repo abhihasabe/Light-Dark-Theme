@@ -9,9 +9,9 @@ class LogoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _logo = new AssetImage("assets/logo.png");
-    var _logoHeader= new AssetImage("assets/logo_header.png");
-    var _logoDark = new AssetImage("assets/logo_dark.png");
+    var _logo = new AssetImage("assets/images/logo.png");
+    var _logoHeader= new AssetImage("assets/images/logo_header.png");
+    var _logoDark = new AssetImage("assets/images/logo_dark.png");
 
     final _finalLogoWidget = header == true ? challenge == true ? _logoDark : _logoHeader : challenge == true ? _logoDark : _logo;
     return Image(
